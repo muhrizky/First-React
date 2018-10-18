@@ -8,10 +8,11 @@
 
 import React, {Component} from 'react';
 import { AppRegistry, Text, View} from 'react-native';
-class Greeting extends Component{
+
+class Perkenalan extends Component{
   render(){
     return(
-      <Text>Hello {this.props.name}!</Text>
+      <Text>{this.props.name}{this.props.asal}!</Text>
     );
   }
 }
@@ -20,9 +21,10 @@ export default class LotsOfGreetings extends Component{
   render(){
     return(
       <View style={{alignItems: 'center'}}>
-      <Greeting name= 'Coba React Cuy' />
-      <Greeting name ='kuylah asiq' />
-      <Greeting name ='Sini belajar bareng' />
+      <Perkenalan name= 'Muhammad Rizqi' />
+      <Perkenalan asal ='Pemalang' />
+      <Perkenalan name ='Jazak Firdaus' />
+      <Perkenalan asal ='Jember' />
       </View>
     );
   }
