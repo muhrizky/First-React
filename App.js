@@ -7,28 +7,52 @@
  */
 
 import React, {Component} from 'react';
-import { AppRegistry, Text, View} from 'react-native';
+import { AppRegistry, Text, TextInput, View} from 'react-native';
 
-class Perkenalan extends Component{
+export default class InputState extends Component{
+  constructor()
+  {
+    super()
+    this.state = {
+      nama:'',
+    }
+  }
   render(){
     return(
-      <Text>{this.props.name}{this.props.asal}!</Text>
+      <View>
+        <TextInput
+            onChangeText={(text) => {this.setState({nama:text})}}
+          />
+          <Text>
+            Saya adalah {this.state.nama}
+          </Text>
+          
+            </View>
     );
   }
 }
 
-export default class LotsOfGreetings extends Component{
-  render(){
-    return(
-      <View style={{alignItems: 'center'}}>
-      <Perkenalan name= 'Muhammad Rizqi' />
-      <Perkenalan asal ='Pemalang' />
-      <Perkenalan name ='Jazak Firdaus' />
-      <Perkenalan asal ='Jember' />
-      </View>
-    );
-  }
-}
+
+// class Perkenalan extends Component{
+//   render(){
+//     return(
+//       <Text>{this.props.name}{this.props.asal}!</Text>
+//     );
+//   }
+// }
+
+// export default class LotsOfGreetings extends Component{
+//   render(){
+//     return(
+//       <View style={{alignItems: 'center'}}>
+//       <Perkenalan name= 'Muhammad Rizqi' />
+//       <Perkenalan asal ='Pemalang' />
+//       <Perkenalan name ='Jazak Firdaus' />
+//       <Perkenalan asal ='Jember' />
+//       </View>
+//     );
+//   }
+// }
 AppRegistry.registerComponent('Projekpertama', ()=> LotsOfGreetings);
 
 // const instructions = Platform.select({
